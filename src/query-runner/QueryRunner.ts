@@ -118,13 +118,14 @@ export interface QueryRunner {
     query(
         query: string,
         parameters: any[] | undefined,
+        options: any,
         useStructuredResult: true,
     ): Promise<QueryResult>
 
     /**
      * Executes a given SQL query and returns raw database results.
      */
-    query(query: string, parameters?: any[]): Promise<any>
+    query(query: string, parameters?: any[], options?: any): Promise<any>
 
     /**
      * Returns raw data stream.
@@ -325,6 +326,7 @@ export interface QueryRunner {
     createPrimaryKey(
         table: Table | string,
         columnNames: string[],
+        constraintName?: string,
     ): Promise<void>
 
     /**
@@ -338,7 +340,10 @@ export interface QueryRunner {
     /**
      * Drops a primary key.
      */
-    dropPrimaryKey(table: Table | string): Promise<void>
+    dropPrimaryKey(
+        table: Table | string,
+        constraintName?: string,
+    ): Promise<void>
 
     /**
      * Creates a new unique constraint.
