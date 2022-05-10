@@ -10,10 +10,10 @@
     "lint": "prettier --check \"./src/**/*.ts\" \"./test/**/*.ts\" \"./sample/**/*.ts\"",
     "format": "prettier --write \"./src/**/*.ts\" \"./test/**/*.ts\" \"./sample/**/*.ts\"",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 2",
-    "precommit": "npm run lint && npm run compile",
-    "prepublishOnly": "npm run lint && npm run compile"
+    "precommit": "npm run lint && npm run package && npm run compile",
+    "prepublishOnly": "npm run lint && npm run package && npm run compile"
   },
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Data-Mapper ORM for TypeScript, ES7, ES6, ES5. Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, MongoDB databases.",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -241,11 +241,6 @@
     "uuid": "^8.3.2",
     "xml2js": "^0.4.23",
     "yargs": "^17.3.1"
-  },
-  "bin": {
-    "typeorm": "./cli.js",
-    "typeorm-ts-node-commonjs": "./cli-ts-node-commonjs.js",
-    "typeorm-ts-node-esm": "./cli-ts-node-esm.js"
   },
   "funding": "https://opencollective.com/typeorm",
   "collective": {
