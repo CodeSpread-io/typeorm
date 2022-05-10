@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "lib": ["es5", "es6"],
-        "outDir": "build/compiled",
+        "outDir": "lib",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "target": "ES2019",
@@ -29,6 +29,7 @@
     "exclude": [
         "tmp",
         "temp",
+        "lib",
         "build",
         "node_modules"
     ]
